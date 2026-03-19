@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Prime Software Solutions</title>
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --bg-dark: #080808;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        nav ul { display: flex; list-style: none; padding: 0; margin: 0; }
+        nav ul li { margin-right: 30px; }
+        nav ul li a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 16px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover { color: var(--neon-purple); text-shadow: 0 0 8px var(--neon-purple); }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(to left, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.3));
+        }
+
+        .hero p { color: #888; font-size: 1.4rem; margin: 25px 0; max-width: 800px; }
+
+        /* Projects Section */
+        #projects_area {
+            display: none; 
+            padding: 80px 8%;
+            text-align: center;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .p-card {
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: 0.4s;
+        }
+
+        .p-card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.1);
+        }
+
+        .p-card h3 { color: white; margin-bottom: 15px; }
+
+        .btn-link {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--neon-purple);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-link:hover { background: var(--neon-purple); box-shadow: 0 0 20px var(--neon-purple); }
+
+        /* Footer */
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #222;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /* النقطة المخفية للدخول */
+        .admin-secret {
+            color: #080808; /* نفس لون الخلفية عشان تكون مخفية */
+            text-decoration: none;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NOVA PRIME</div>
+        <ul>
+            <li><a onclick="showHome()">الرئيسية</a></li>
+            <li><a onclick="showProjects()">مشاريعنا</a></li>
+            </ul>
+    </nav>
+
+    <section class="hero" id="home_area">
+        <h1>نوفا برايم للحلول البرمجية ترحب بكم</h1>
+        <p>نبتكر حلولاً رقمية خارج الصندوق. متخصصون في برمجة الألعاب، سكريبتات Lua، وأنظمة الحماية المتقدمة.</p>
+    </section>
+
+    <section id="projects_area">
+        <div class="project-grid">
+            <div class="p-card">
+                <h3>متجرنا (stor)<h3>
+                <p>متجر العاب متقدم تم تطويرو من فريق Nova Prime Software Solutions</p>
+                <a href="https://boston225.github.io/stor/" class="btn-link">فتح الرابط</a>
+            </div>
+
+            <div class="p-card">
+                <h3>Boston Hub System</h3>
+                <p>سكربتاتنا  Roblox.</p>
+                <a href="#" class="btn-link">فتح الرابط</a>
+            </div>
+
+            <div class="p-card" style="border-style: dashed; border-color: #333;">
+                <h3 style="color: #666;">الاغاني</h3>
+                <p>سيتم الكشف عنوا قريبا من فريق Nova Prime Software Solutions</p>
+                <span style="color: var(--neon-purple); font-weight: bold; text-shadow: 0 0 5px var(--neon-purple);">قريباً...</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لشركة Nova Prime &copy; 2026</p>
+        <a href="login.html" class="admin-secret">.</a>
+    </footer>
+
+    <script>
+        function showProjects() {
+            document.getElementById('home_area').style.display = 'none';
+            document.getElementById('projects_area').style.display = 'block';
+        }
+
+        function showHome() {
+            document.getElementById('projects_area').style.display = 'none';
+            document.getElementById('home_area').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
